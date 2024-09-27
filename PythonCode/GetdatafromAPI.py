@@ -116,8 +116,8 @@ fact_js['miss_astronomical_distance'] = pd.to_numeric(fact_js['miss_astronomical
 dates_to_delete_lst = fact_js['date'].dt.strftime('%Y-%m-%d').unique().tolist()
 
 # genero un string
-fechas_str = "', '".join(dates_to_delete_lst)
-query = f'DELETE FROM "2024_juan_franco_torrez_schema".fact_asteroidsnearearth WHERE date IN (\'{fechas_str}\')'
+dates_str = "', '".join(dates_to_delete_lst)
+query = f'DELETE FROM "2024_juan_franco_torrez_schema".fact_asteroidsnearearth WHERE date IN (\'{dates_str}\')'
 
 
 # Ejecuto el delete
@@ -127,5 +127,3 @@ engine.execute(query)
 fact_js.to_sql(name='fact_asteroidsnearearth', con=engine, schema='2024_juan_franco_torrez_schema', if_exists='append', index=False)
 
 
-
-#"""
