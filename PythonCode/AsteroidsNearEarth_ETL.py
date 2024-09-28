@@ -3,15 +3,18 @@ import pandas as pd
 from sqlalchemy import create_engine
 from GenericTools import database_conection
 import json
+from dotenv import load_dotenv
+import os
 
 
-def extract_api_conection(apikey:str):
+def extract_api_conection():
+
+    load_dotenv()
     
     # API data
-    url = 'https://api.nasa.gov/neo/rest/v1/feed?'
+    url = os.getenv("API_NASA_URL")
+    apikey = 'api_key=' + os.getenv("API_NASA_KEY")
     paramurl= 'start_date=2024-09-11&end_date=2024-09-12&'
-    #apikey = 'api_key=c50CVxpAev2KP5F4GOnAVrCSHvQCgx0bA0tg1xwq'
-
     finalurl = url+paramurl+apikey
 
     data = requests.get(finalurl)
@@ -153,7 +156,7 @@ def load_tables(engine:any, asteroids_to_insert:any, fact_to_insert:any):
     
 def main_etl_asteriods_near_earth():
 
-    js = extract_api_conection('api_key=c50CVxpAev2KP5F4GOnAVrCSHvQCgx0bA0tg1xwq')
+    js = extract_api_conection()
 
     df = transform_main_dataframe(js)
     engine = database_conection()
@@ -172,3 +175,4 @@ def main_etl_asteriods_near_earth():
         print(f"Inserts failed: {message}")
         return
 
+main_etl_asteriods_near_earth()
