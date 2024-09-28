@@ -4,6 +4,7 @@ COPY requirements.txt .
 
 USER root
 RUN apt-get update
+RUN apt-get update && apt-get install -y build-essential gcc python3-dev
 
 USER airflow
 #RUN pip install --user --upgrade pip

@@ -1,8 +1,29 @@
+from airflow import DAG
+from airflow.operators.python import PythonOperator
+from datetime import datetime
+#from AsteroidsNearEarth_ETL import main_etl_asteriods_near_earth
 import requests
 import pandas as pd
 from sqlalchemy import create_engine
-from GenericTools import database_conection
+#from GenericTools import database_conection
 import json
+from sqlalchemy import create_engine
+
+
+def database_conection():
+
+    #Connection data: 
+    user = '2024_juan_franco_torrez'
+    password = 'L9&!2^Q$x4R'
+    host = 'redshift-pda-cluster.cnuimntownzt.us-east-2.redshift.amazonaws.com'
+    port = '5439'
+    database = 'pda'
+
+    connection_string = f"postgresql://{user}:{password}@{host}:{port}/{database}"
+    engine = create_engine(connection_string)
+
+    return engine
+
 
 
 def extract_api_conection(apikey:str):
@@ -172,3 +193,31 @@ def main_etl_asteriods_near_earth():
         print(f"Inserts failed: {message}")
         return
 
+
+########################################################################################
+###################### DAG
+########################################################################################
+
+
+with DAG(
+    'etl_asteroids_near_earth_ETL',
+    default_args={
+        'depends_on_past': False,
+        'email_on_failure': False,
+        'email_on_retry': False,
+        'retries': 1,
+    },
+    description= 'ETL pipeline to extract, transform and load data on the asteroids datawarehouse created by Juan Franco Torrez',
+    schedule_interval= '@daily',
+    start_date= datetime(2024,9,27),
+    catchup=True,
+)as dag:
+
+    # Task 1 main execution
+    main_etl_asteriods_near_earth = PythonOperator(
+        task_id = 'main_etl_asteriods_near_earth',
+        python_callable= main_etl_asteriods_near_earth
+
+    )
+
+    #set task dependencies

@@ -1,0 +1,85 @@
+[2024-09-28T02:03:15.488+0000] {processor.py:186} INFO - Started process (PID=6778) to work on /opt/airflow/dags/etl_dag_v2.py
+[2024-09-28T02:03:15.489+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/etl_dag_v2.py for tasks to queue
+[2024-09-28T02:03:15.494+0000] {logging_mixin.py:190} INFO - [2024-09-28T02:03:15.493+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/etl_dag_v2.py
+[2024-09-28T02:03:15.979+0000] {processor.py:925} INFO - DAG(s) 'etl_asteroids_near_earth_ETL' retrieved from /opt/airflow/dags/etl_dag_v2.py
+[2024-09-28T02:03:16.091+0000] {logging_mixin.py:190} INFO - [2024-09-28T02:03:16.090+0000] {override.py:1900} INFO - Created Permission View: can delete on DAG:etl_asteroids_near_earth_ETL
+[2024-09-28T02:03:16.104+0000] {logging_mixin.py:190} INFO - [2024-09-28T02:03:16.104+0000] {override.py:1900} INFO - Created Permission View: can read on DAG:etl_asteroids_near_earth_ETL
+[2024-09-28T02:03:16.116+0000] {logging_mixin.py:190} INFO - [2024-09-28T02:03:16.115+0000] {override.py:1900} INFO - Created Permission View: can edit on DAG:etl_asteroids_near_earth_ETL
+[2024-09-28T02:03:16.127+0000] {logging_mixin.py:190} INFO - [2024-09-28T02:03:16.126+0000] {override.py:1900} INFO - Created Permission View: menu access on DAG Run:etl_asteroids_near_earth_ETL
+[2024-09-28T02:03:16.136+0000] {logging_mixin.py:190} INFO - [2024-09-28T02:03:16.136+0000] {override.py:1900} INFO - Created Permission View: can create on DAG Run:etl_asteroids_near_earth_ETL
+[2024-09-28T02:03:16.148+0000] {logging_mixin.py:190} INFO - [2024-09-28T02:03:16.147+0000] {override.py:1900} INFO - Created Permission View: can read on DAG Run:etl_asteroids_near_earth_ETL
+[2024-09-28T02:03:16.169+0000] {logging_mixin.py:190} INFO - [2024-09-28T02:03:16.168+0000] {override.py:1900} INFO - Created Permission View: can delete on DAG Run:etl_asteroids_near_earth_ETL
+[2024-09-28T02:03:16.170+0000] {logging_mixin.py:190} INFO - [2024-09-28T02:03:16.170+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2024-09-28T02:03:16.185+0000] {logging_mixin.py:190} INFO - [2024-09-28T02:03:16.185+0000] {dag.py:3262} INFO - Creating ORM DAG for etl_asteroids_near_earth_ETL
+[2024-09-28T02:03:16.201+0000] {logging_mixin.py:190} INFO - [2024-09-28T02:03:16.200+0000] {dag.py:4180} INFO - Setting next_dagrun for etl_asteroids_near_earth_ETL to 2024-09-27 00:00:00+00:00, run_after=2024-09-28 00:00:00+00:00
+[2024-09-28T02:03:16.230+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/etl_dag_v2.py took 0.747 seconds
+[2024-09-28T02:03:46.361+0000] {processor.py:186} INFO - Started process (PID=6841) to work on /opt/airflow/dags/etl_dag_v2.py
+[2024-09-28T02:03:46.365+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/etl_dag_v2.py for tasks to queue
+[2024-09-28T02:03:46.368+0000] {logging_mixin.py:190} INFO - [2024-09-28T02:03:46.368+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/etl_dag_v2.py
+[2024-09-28T02:03:46.400+0000] {processor.py:925} INFO - DAG(s) 'etl_asteroids_near_earth_ETL' retrieved from /opt/airflow/dags/etl_dag_v2.py
+[2024-09-28T02:03:46.427+0000] {logging_mixin.py:190} INFO - [2024-09-28T02:03:46.426+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2024-09-28T02:03:46.461+0000] {logging_mixin.py:190} INFO - [2024-09-28T02:03:46.461+0000] {dag.py:4180} INFO - Setting next_dagrun for etl_asteroids_near_earth_ETL to 2024-09-27 00:00:00+00:00, run_after=2024-09-28 00:00:00+00:00
+[2024-09-28T02:03:46.491+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/etl_dag_v2.py took 0.139 seconds
+[2024-09-28T02:04:16.815+0000] {processor.py:186} INFO - Started process (PID=6904) to work on /opt/airflow/dags/etl_dag_v2.py
+[2024-09-28T02:04:16.817+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/etl_dag_v2.py for tasks to queue
+[2024-09-28T02:04:16.818+0000] {logging_mixin.py:190} INFO - [2024-09-28T02:04:16.818+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/etl_dag_v2.py
+[2024-09-28T02:04:16.850+0000] {processor.py:925} INFO - DAG(s) 'etl_asteroids_near_earth_ETL' retrieved from /opt/airflow/dags/etl_dag_v2.py
+[2024-09-28T02:04:16.876+0000] {logging_mixin.py:190} INFO - [2024-09-28T02:04:16.876+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2024-09-28T02:04:16.904+0000] {logging_mixin.py:190} INFO - [2024-09-28T02:04:16.903+0000] {dag.py:4180} INFO - Setting next_dagrun for etl_asteroids_near_earth_ETL to 2024-09-27 00:00:00+00:00, run_after=2024-09-28 00:00:00+00:00
+[2024-09-28T02:04:16.940+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/etl_dag_v2.py took 0.131 seconds
+[2024-09-28T02:04:47.133+0000] {processor.py:186} INFO - Started process (PID=6967) to work on /opt/airflow/dags/etl_dag_v2.py
+[2024-09-28T02:04:47.134+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/etl_dag_v2.py for tasks to queue
+[2024-09-28T02:04:47.136+0000] {logging_mixin.py:190} INFO - [2024-09-28T02:04:47.135+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/etl_dag_v2.py
+[2024-09-28T02:04:47.161+0000] {processor.py:925} INFO - DAG(s) 'etl_asteroids_near_earth_ETL' retrieved from /opt/airflow/dags/etl_dag_v2.py
+[2024-09-28T02:04:47.183+0000] {logging_mixin.py:190} INFO - [2024-09-28T02:04:47.183+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2024-09-28T02:04:47.208+0000] {logging_mixin.py:190} INFO - [2024-09-28T02:04:47.208+0000] {dag.py:4180} INFO - Setting next_dagrun for etl_asteroids_near_earth_ETL to 2024-09-27 00:00:00+00:00, run_after=2024-09-28 00:00:00+00:00
+[2024-09-28T02:04:47.233+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/etl_dag_v2.py took 0.106 seconds
+[2024-09-28T02:05:17.677+0000] {processor.py:186} INFO - Started process (PID=7031) to work on /opt/airflow/dags/etl_dag_v2.py
+[2024-09-28T02:05:17.679+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/etl_dag_v2.py for tasks to queue
+[2024-09-28T02:05:17.681+0000] {logging_mixin.py:190} INFO - [2024-09-28T02:05:17.681+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/etl_dag_v2.py
+[2024-09-28T02:05:17.720+0000] {processor.py:925} INFO - DAG(s) 'etl_asteroids_near_earth_ETL' retrieved from /opt/airflow/dags/etl_dag_v2.py
+[2024-09-28T02:05:17.743+0000] {logging_mixin.py:190} INFO - [2024-09-28T02:05:17.743+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2024-09-28T02:05:17.769+0000] {logging_mixin.py:190} INFO - [2024-09-28T02:05:17.769+0000] {dag.py:4180} INFO - Setting next_dagrun for etl_asteroids_near_earth_ETL to 2024-09-27 00:00:00+00:00, run_after=2024-09-28 00:00:00+00:00
+[2024-09-28T02:05:17.792+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/etl_dag_v2.py took 0.121 seconds
+[2024-09-28T02:05:48.037+0000] {processor.py:186} INFO - Started process (PID=7098) to work on /opt/airflow/dags/etl_dag_v2.py
+[2024-09-28T02:05:48.039+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/etl_dag_v2.py for tasks to queue
+[2024-09-28T02:05:48.041+0000] {logging_mixin.py:190} INFO - [2024-09-28T02:05:48.041+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/etl_dag_v2.py
+[2024-09-28T02:05:48.080+0000] {processor.py:925} INFO - DAG(s) 'etl_asteroids_near_earth_ETL' retrieved from /opt/airflow/dags/etl_dag_v2.py
+[2024-09-28T02:05:48.104+0000] {logging_mixin.py:190} INFO - [2024-09-28T02:05:48.104+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2024-09-28T02:05:48.132+0000] {logging_mixin.py:190} INFO - [2024-09-28T02:05:48.132+0000] {dag.py:4180} INFO - Setting next_dagrun for etl_asteroids_near_earth_ETL to 2024-09-28 00:00:00+00:00, run_after=2024-09-29 00:00:00+00:00
+[2024-09-28T02:05:48.157+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/etl_dag_v2.py took 0.127 seconds
+[2024-09-28T02:06:18.752+0000] {processor.py:186} INFO - Started process (PID=7164) to work on /opt/airflow/dags/etl_dag_v2.py
+[2024-09-28T02:06:18.754+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/etl_dag_v2.py for tasks to queue
+[2024-09-28T02:06:18.756+0000] {logging_mixin.py:190} INFO - [2024-09-28T02:06:18.756+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/etl_dag_v2.py
+[2024-09-28T02:06:18.786+0000] {processor.py:925} INFO - DAG(s) 'etl_asteroids_near_earth_ETL' retrieved from /opt/airflow/dags/etl_dag_v2.py
+[2024-09-28T02:06:18.817+0000] {logging_mixin.py:190} INFO - [2024-09-28T02:06:18.816+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2024-09-28T02:06:18.841+0000] {logging_mixin.py:190} INFO - [2024-09-28T02:06:18.841+0000] {dag.py:4180} INFO - Setting next_dagrun for etl_asteroids_near_earth_ETL to 2024-09-28 00:00:00+00:00, run_after=2024-09-29 00:00:00+00:00
+[2024-09-28T02:06:18.863+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/etl_dag_v2.py took 0.117 seconds
+[2024-09-28T02:06:49.051+0000] {processor.py:186} INFO - Started process (PID=7227) to work on /opt/airflow/dags/etl_dag_v2.py
+[2024-09-28T02:06:49.053+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/etl_dag_v2.py for tasks to queue
+[2024-09-28T02:06:49.055+0000] {logging_mixin.py:190} INFO - [2024-09-28T02:06:49.055+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/etl_dag_v2.py
+[2024-09-28T02:06:49.100+0000] {processor.py:925} INFO - DAG(s) 'etl_asteroids_near_earth_ETL' retrieved from /opt/airflow/dags/etl_dag_v2.py
+[2024-09-28T02:06:49.126+0000] {logging_mixin.py:190} INFO - [2024-09-28T02:06:49.126+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2024-09-28T02:06:49.156+0000] {logging_mixin.py:190} INFO - [2024-09-28T02:06:49.156+0000] {dag.py:4180} INFO - Setting next_dagrun for etl_asteroids_near_earth_ETL to 2024-09-28 00:00:00+00:00, run_after=2024-09-29 00:00:00+00:00
+[2024-09-28T02:06:49.183+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/etl_dag_v2.py took 0.143 seconds
+[2024-09-28T02:07:19.761+0000] {processor.py:186} INFO - Started process (PID=7290) to work on /opt/airflow/dags/etl_dag_v2.py
+[2024-09-28T02:07:19.763+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/etl_dag_v2.py for tasks to queue
+[2024-09-28T02:07:19.767+0000] {logging_mixin.py:190} INFO - [2024-09-28T02:07:19.765+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/etl_dag_v2.py
+[2024-09-28T02:07:19.808+0000] {processor.py:925} INFO - DAG(s) 'etl_asteroids_near_earth_ETL' retrieved from /opt/airflow/dags/etl_dag_v2.py
+[2024-09-28T02:07:19.834+0000] {logging_mixin.py:190} INFO - [2024-09-28T02:07:19.833+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2024-09-28T02:07:19.861+0000] {logging_mixin.py:190} INFO - [2024-09-28T02:07:19.861+0000] {dag.py:4180} INFO - Setting next_dagrun for etl_asteroids_near_earth_ETL to 2024-09-28 00:00:00+00:00, run_after=2024-09-29 00:00:00+00:00
+[2024-09-28T02:07:19.885+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/etl_dag_v2.py took 0.130 seconds
+[2024-09-28T02:07:50.243+0000] {processor.py:186} INFO - Started process (PID=7354) to work on /opt/airflow/dags/etl_dag_v2.py
+[2024-09-28T02:07:50.245+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/etl_dag_v2.py for tasks to queue
+[2024-09-28T02:07:50.247+0000] {logging_mixin.py:190} INFO - [2024-09-28T02:07:50.247+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/etl_dag_v2.py
+[2024-09-28T02:07:50.272+0000] {processor.py:925} INFO - DAG(s) 'etl_asteroids_near_earth_ETL' retrieved from /opt/airflow/dags/etl_dag_v2.py
+[2024-09-28T02:07:50.292+0000] {logging_mixin.py:190} INFO - [2024-09-28T02:07:50.292+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2024-09-28T02:07:50.314+0000] {logging_mixin.py:190} INFO - [2024-09-28T02:07:50.314+0000] {dag.py:4180} INFO - Setting next_dagrun for etl_asteroids_near_earth_ETL to 2024-09-28 00:00:00+00:00, run_after=2024-09-29 00:00:00+00:00
+[2024-09-28T02:07:50.337+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/etl_dag_v2.py took 0.103 seconds
+[2024-09-28T02:08:20.488+0000] {processor.py:186} INFO - Started process (PID=7415) to work on /opt/airflow/dags/etl_dag_v2.py
+[2024-09-28T02:08:20.489+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/etl_dag_v2.py for tasks to queue
+[2024-09-28T02:08:20.491+0000] {logging_mixin.py:190} INFO - [2024-09-28T02:08:20.491+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/etl_dag_v2.py
+[2024-09-28T02:08:20.522+0000] {processor.py:925} INFO - DAG(s) 'etl_asteroids_near_earth_ETL' retrieved from /opt/airflow/dags/etl_dag_v2.py
+[2024-09-28T02:08:20.543+0000] {logging_mixin.py:190} INFO - [2024-09-28T02:08:20.542+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2024-09-28T02:08:20.575+0000] {logging_mixin.py:190} INFO - [2024-09-28T02:08:20.575+0000] {dag.py:4180} INFO - Setting next_dagrun for etl_asteroids_near_earth_ETL to 2024-09-28 00:00:00+00:00, run_after=2024-09-29 00:00:00+00:00
+[2024-09-28T02:08:20.604+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/etl_dag_v2.py took 0.123 seconds
