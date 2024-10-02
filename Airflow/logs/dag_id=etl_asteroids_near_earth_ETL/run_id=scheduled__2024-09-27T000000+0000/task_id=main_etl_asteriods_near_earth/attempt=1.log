@@ -1,0 +1,96 @@
+[2024-09-28T02:05:26.460+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2024-09-28T02:05:26.476+0000] {taskinstance.py:2612} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: etl_asteroids_near_earth_ETL.main_etl_asteriods_near_earth scheduled__2024-09-27T00:00:00+00:00 [queued]>
+[2024-09-28T02:05:26.485+0000] {taskinstance.py:2612} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: etl_asteroids_near_earth_ETL.main_etl_asteriods_near_earth scheduled__2024-09-27T00:00:00+00:00 [queued]>
+[2024-09-28T02:05:26.487+0000] {taskinstance.py:2865} INFO - Starting attempt 1 of 2
+[2024-09-28T02:05:26.502+0000] {taskinstance.py:2888} INFO - Executing <Task(PythonOperator): main_etl_asteriods_near_earth> on 2024-09-27 00:00:00+00:00
+[2024-09-28T02:05:26.510+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70: DeprecationWarning: This process (pid=796) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-09-28T02:05:26.512+0000] {standard_task_runner.py:72} INFO - Started process 800 to run task
+[2024-09-28T02:05:26.513+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'etl_asteroids_near_earth_ETL', 'main_etl_asteriods_near_earth', 'scheduled__2024-09-27T00:00:00+00:00', '--job-id', '4', '--raw', '--subdir', 'DAGS_FOLDER/etl_dag_v2.py', '--cfg-path', '/tmp/tmp_9u4qppy']
+[2024-09-28T02:05:26.514+0000] {standard_task_runner.py:105} INFO - Job 4: Subtask main_etl_asteriods_near_earth
+[2024-09-28T02:05:26.571+0000] {task_command.py:467} INFO - Running <TaskInstance: etl_asteroids_near_earth_ETL.main_etl_asteriods_near_earth scheduled__2024-09-27T00:00:00+00:00 [running]> on host 5ea24098af8a
+[2024-09-28T02:05:26.662+0000] {taskinstance.py:3131} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='etl_asteroids_near_earth_ETL' AIRFLOW_CTX_TASK_ID='main_etl_asteriods_near_earth' AIRFLOW_CTX_EXECUTION_DATE='2024-09-27T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-09-27T00:00:00+00:00'
+[2024-09-28T02:05:26.664+0000] {logging_mixin.py:190} INFO - Task instance is in running state
+[2024-09-28T02:05:26.664+0000] {logging_mixin.py:190} INFO -  Previous state of the Task instance: queued
+[2024-09-28T02:05:26.665+0000] {logging_mixin.py:190} INFO - Current task name:main_etl_asteriods_near_earth state:running start_date:2024-09-28 02:05:26.477448+00:00
+[2024-09-28T02:05:26.666+0000] {logging_mixin.py:190} INFO - Dag name:etl_asteroids_near_earth_ETL and current dag run status:running
+[2024-09-28T02:05:26.667+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2024-09-28T02:05:30.924+0000] {logging_mixin.py:190} INFO - Connection to Redshift successful!
+[2024-09-28T02:05:32.098+0000] {logging_mixin.py:190} INFO - Connection to Redshift successful!
+[2024-09-28T02:05:32.745+0000] {logging_mixin.py:190} INFO - Connection to Redshift successful!
+[2024-09-28T02:05:55.693+0000] {logging_mixin.py:190} INFO - Inserts were successful.
+[2024-09-28T02:05:55.696+0000] {python.py:240} INFO - Done. Returned value was: None
+[2024-09-28T02:05:55.722+0000] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2024-09-28T02:05:55.723+0000] {taskinstance.py:352} INFO - Marking task as SUCCESS. dag_id=etl_asteroids_near_earth_ETL, task_id=main_etl_asteriods_near_earth, run_id=scheduled__2024-09-27T00:00:00+00:00, execution_date=20240927T000000, start_date=20240928T020526, end_date=20240928T020555
+[2024-09-28T02:05:55.740+0000] {logging_mixin.py:190} INFO - Task instance in success state
+[2024-09-28T02:05:55.741+0000] {logging_mixin.py:190} INFO -  Previous state of the Task instance: running
+[2024-09-28T02:05:55.742+0000] {logging_mixin.py:190} INFO - Dag name:etl_asteroids_near_earth_ETL queued_at:2024-09-28 02:05:21.227714+00:00
+[2024-09-28T02:05:55.743+0000] {logging_mixin.py:190} INFO - Task hostname:5ea24098af8a operator:PythonOperator
+[2024-09-28T02:05:55.773+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2024-09-28T02:05:55.798+0000] {taskinstance.py:3900} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2024-09-28T02:05:55.801+0000] {local_task_job_runner.py:245} INFO - ::endgroup::
+[2024-10-01T23:17:12.707+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2024-10-01T23:17:12.734+0000] {taskinstance.py:2612} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: etl_asteroids_near_earth_ETL.main_etl_asteriods_near_earth scheduled__2024-09-27T00:00:00+00:00 [queued]>
+[2024-10-01T23:17:12.747+0000] {taskinstance.py:2612} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: etl_asteroids_near_earth_ETL.main_etl_asteriods_near_earth scheduled__2024-09-27T00:00:00+00:00 [queued]>
+[2024-10-01T23:17:12.748+0000] {taskinstance.py:2865} INFO - Starting attempt 1 of 2
+[2024-10-01T23:17:12.771+0000] {taskinstance.py:2888} INFO - Executing <Task(PythonOperator): main_etl_asteriods_near_earth> on 2024-09-27 00:00:00+00:00
+[2024-10-01T23:17:12.780+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70: DeprecationWarning: This process (pid=138) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-10-01T23:17:12.785+0000] {standard_task_runner.py:72} INFO - Started process 148 to run task
+[2024-10-01T23:17:12.796+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'etl_asteroids_near_earth_ETL', 'main_etl_asteriods_near_earth', 'scheduled__2024-09-27T00:00:00+00:00', '--job-id', '5', '--raw', '--subdir', 'DAGS_FOLDER/etl_dag_v2.py', '--cfg-path', '/tmp/tmpr0xll976']
+[2024-10-01T23:17:12.799+0000] {standard_task_runner.py:105} INFO - Job 5: Subtask main_etl_asteriods_near_earth
+[2024-10-01T23:17:12.900+0000] {task_command.py:467} INFO - Running <TaskInstance: etl_asteroids_near_earth_ETL.main_etl_asteriods_near_earth scheduled__2024-09-27T00:00:00+00:00 [running]> on host 612d80031f6e
+[2024-10-01T23:17:13.455+0000] {taskinstance.py:3131} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='etl_asteroids_near_earth_ETL' AIRFLOW_CTX_TASK_ID='main_etl_asteriods_near_earth' AIRFLOW_CTX_EXECUTION_DATE='2024-09-27T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-09-27T00:00:00+00:00'
+[2024-10-01T23:17:13.471+0000] {logging_mixin.py:190} INFO - Task instance is in running state
+[2024-10-01T23:17:13.472+0000] {logging_mixin.py:190} INFO -  Previous state of the Task instance: queued
+[2024-10-01T23:17:13.473+0000] {logging_mixin.py:190} INFO - Current task name:main_etl_asteriods_near_earth state:running start_date:2024-10-01 23:17:12.735147+00:00
+[2024-10-01T23:17:13.475+0000] {logging_mixin.py:190} INFO - Dag name:etl_asteroids_near_earth_ETL and current dag run status:running
+[2024-10-01T23:17:13.477+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2024-10-01T23:17:17.599+0000] {logging_mixin.py:190} INFO - Connection to Redshift successful!
+[2024-10-01T23:17:18.677+0000] {logging_mixin.py:190} INFO - Connection to Redshift successful!
+[2024-10-01T23:17:19.693+0000] {logging_mixin.py:190} INFO - Connection to Redshift successful!
+[2024-10-01T23:17:41.768+0000] {logging_mixin.py:190} INFO - Inserts were successful.
+[2024-10-01T23:17:41.773+0000] {python.py:240} INFO - Done. Returned value was: None
+[2024-10-01T23:17:41.794+0000] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2024-10-01T23:17:41.826+0000] {taskinstance.py:352} INFO - Marking task as SUCCESS. dag_id=etl_asteroids_near_earth_ETL, task_id=main_etl_asteriods_near_earth, run_id=scheduled__2024-09-27T00:00:00+00:00, execution_date=20240927T000000, start_date=20241001T231712, end_date=20241001T231741
+[2024-10-01T23:17:41.842+0000] {logging_mixin.py:190} INFO - Task instance in success state
+[2024-10-01T23:17:41.856+0000] {logging_mixin.py:190} INFO -  Previous state of the Task instance: running
+[2024-10-01T23:17:41.857+0000] {logging_mixin.py:190} INFO - Dag name:etl_asteroids_near_earth_ETL queued_at:2024-10-01 23:17:08.647715+00:00
+[2024-10-01T23:17:41.858+0000] {logging_mixin.py:190} INFO - Task hostname:612d80031f6e operator:PythonOperator
+[2024-10-01T23:17:41.947+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2024-10-01T23:17:42.248+0000] {taskinstance.py:3900} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2024-10-01T23:17:42.356+0000] {local_task_job_runner.py:245} INFO - ::endgroup::
+[2024-10-02T00:08:16.474+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2024-10-02T00:08:16.491+0000] {taskinstance.py:2612} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: etl_asteroids_near_earth_ETL.main_etl_asteriods_near_earth scheduled__2024-09-27T00:00:00+00:00 [queued]>
+[2024-10-02T00:08:16.500+0000] {taskinstance.py:2612} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: etl_asteroids_near_earth_ETL.main_etl_asteriods_near_earth scheduled__2024-09-27T00:00:00+00:00 [queued]>
+[2024-10-02T00:08:16.501+0000] {taskinstance.py:2865} INFO - Starting attempt 1 of 2
+[2024-10-02T00:08:16.513+0000] {taskinstance.py:2888} INFO - Executing <Task(PythonOperator): main_etl_asteriods_near_earth> on 2024-09-27 00:00:00+00:00
+[2024-10-02T00:08:16.521+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70: DeprecationWarning: This process (pid=120) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-10-02T00:08:16.523+0000] {standard_task_runner.py:72} INFO - Started process 141 to run task
+[2024-10-02T00:08:16.523+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'etl_asteroids_near_earth_ETL', 'main_etl_asteriods_near_earth', 'scheduled__2024-09-27T00:00:00+00:00', '--job-id', '4', '--raw', '--subdir', 'DAGS_FOLDER/etl_dag.py', '--cfg-path', '/tmp/tmpzy00y4am']
+[2024-10-02T00:08:16.524+0000] {standard_task_runner.py:105} INFO - Job 4: Subtask main_etl_asteriods_near_earth
+[2024-10-02T00:08:16.580+0000] {task_command.py:467} INFO - Running <TaskInstance: etl_asteroids_near_earth_ETL.main_etl_asteriods_near_earth scheduled__2024-09-27T00:00:00+00:00 [running]> on host 84320ff9b60d
+[2024-10-02T00:08:16.689+0000] {taskinstance.py:3131} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='etl_asteroids_near_earth_ETL' AIRFLOW_CTX_TASK_ID='main_etl_asteriods_near_earth' AIRFLOW_CTX_EXECUTION_DATE='2024-09-27T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-09-27T00:00:00+00:00'
+[2024-10-02T00:08:16.693+0000] {logging_mixin.py:190} INFO - Task instance is in running state
+[2024-10-02T00:08:16.694+0000] {logging_mixin.py:190} INFO -  Previous state of the Task instance: queued
+[2024-10-02T00:08:16.695+0000] {logging_mixin.py:190} INFO - Current task name:main_etl_asteriods_near_earth state:running start_date:2024-10-02 00:08:16.492895+00:00
+[2024-10-02T00:08:16.695+0000] {logging_mixin.py:190} INFO - Dag name:etl_asteroids_near_earth_ETL and current dag run status:running
+[2024-10-02T00:08:16.696+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2024-10-02T00:08:20.775+0000] {logging_mixin.py:190} INFO - Connection to Redshift successful!
+[2024-10-02T00:08:21.866+0000] {logging_mixin.py:190} INFO - Connection to Redshift successful!
+[2024-10-02T00:08:40.393+0000] {logging_mixin.py:190} INFO - Connection to Redshift successful!
+[2024-10-02T00:08:52.555+0000] {logging_mixin.py:190} INFO - Inserts were successful.
+[2024-10-02T00:08:52.556+0000] {python.py:240} INFO - Done. Returned value was: None
+[2024-10-02T00:08:52.568+0000] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2024-10-02T00:08:52.570+0000] {taskinstance.py:352} INFO - Marking task as SUCCESS. dag_id=etl_asteroids_near_earth_ETL, task_id=main_etl_asteriods_near_earth, run_id=scheduled__2024-09-27T00:00:00+00:00, execution_date=20240927T000000, start_date=20241002T000816, end_date=20241002T000852
+[2024-10-02T00:08:52.582+0000] {logging_mixin.py:190} INFO - Task instance in success state
+[2024-10-02T00:08:52.583+0000] {logging_mixin.py:190} INFO -  Previous state of the Task instance: running
+[2024-10-02T00:08:52.585+0000] {logging_mixin.py:190} INFO - Dag name:etl_asteroids_near_earth_ETL queued_at:2024-10-02 00:07:43.868603+00:00
+[2024-10-02T00:08:52.586+0000] {logging_mixin.py:190} INFO - Task hostname:84320ff9b60d operator:PythonOperator
+[2024-10-02T00:08:52.607+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2024-10-02T00:08:52.625+0000] {taskinstance.py:3900} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2024-10-02T00:08:52.628+0000] {local_task_job_runner.py:245} INFO - ::endgroup::
