@@ -1,0 +1,9 @@
+# Ignorar carpetas y archivos de Airflow
+airflow/config/
+airflow/logs/
+airflow/plugins/
+airflow/dags/
+airflow/PythonCode/
+*.pyc
+__pycache__/
+*.log
