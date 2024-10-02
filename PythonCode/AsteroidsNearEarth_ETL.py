@@ -5,21 +5,72 @@ from GenericTools import database_conection
 import json
 from dotenv import load_dotenv
 import os
+from datetime import datetime, timedelta
 
 
-def extract_api_conection():
+def extract_obtain_last_date(engine:any):
+
+    #Me conecto a la base
+    try:
+        with engine.connect() as connection:
+            print("Connection to Redshift successful!")
+            # Example query to test connection
+            #result = connection.execute("SELECT current_date;")
+            #for row in result:
+            #    print("Current date in Redshift:", row[0])
+    except Exception as e:
+        print(f"Error connecting to Redshift: {e}") 
+
+    # en caso de no haber registros, se tomará como fecha base 14 días hacia atras.
+    max_date_df = pd.read_sql('select isnull(cast(max(date) as date), cast(dateadd(d,-14,getdate()) as date)) from "2024_juan_franco_torrez_schema".fact_asteroidsnearearth', engine)
+    
+    max_date = max_date_df[max][0]
+
+    return max_date
+
+
+def extract_range_of_dates(from_date:any):
+
+    from_date = pd.to_datetime(from_date,format="%Y-%m-%d")
+        
+    # Definir la to_date como hoy
+    to_date = pd.to_datetime(datetime.now().date(),format="%Y-%m-%d")
+
+    ranges = []
+
+    while from_date <= to_date:
+
+        end_date = from_date + timedelta(days=7)
+        
+        # Asegurarse de que la fecha_fin no exceda fecha_hasta
+        if end_date > to_date:
+            end_date = to_date
+            
+        # Agregar el rango a la lista
+        ranges.append({'from_date': from_date, 'to_date': end_date})
+        
+        # Avanzar a la siguiente fecha_desde (7 días después)
+        from_date += timedelta(days=7)
+
+    # Crear un DataFrame a partir de la lista de rangos
+    df_rangos = pd.DataFrame(ranges)
+
+    return df_rangos
+
+def extract_api_conection(from_date:any, to_date:any):
 
     load_dotenv()
     
     # API data
     url = os.getenv("API_NASA_URL")
     apikey = 'api_key=' + os.getenv("API_NASA_KEY")
-    paramurl= 'start_date=2024-09-11&end_date=2024-09-12&'
+    
+    paramurl= 'start_date='+from_date+'&end_date='+to_date+'&'
     finalurl = url+paramurl+apikey
 
     data = requests.get(finalurl)
     data = data.json()
-
+    print(finalurl)
     return data
 
 
@@ -175,4 +226,38 @@ def main_etl_asteriods_near_earth():
         print(f"Inserts failed: {message}")
         return
 
-main_etl_asteriods_near_earth()
+#main_etl_asteriods_near_earth()
+
+
+
+engine = database_conection()
+from_date = extract_obtain_last_date(engine)
+
+df = extract_range_of_dates(from_date)
+
+print(df)
+
+for index, row in df.iterrows():
+    from_date_str = str(row['from_date'])
+    to_date_str = str(row['to_date'])
+
+    js = extract_api_conection(from_date_str,to_date_str)
+    df = transform_main_dataframe(js)
+    dim_df=transform_dimensions(engine,df)
+    fact_df=transform_fact(engine,df)
+    success,message = load_tables(engine,dim_df,fact_df)
+
+     # Verificar el resultado
+    if success:
+        print(f"Inserts for {from_date_str} -  {to_date_str} were successful.")
+    else:
+        print(f"Inserts failed: {message}")
+
+
+
+
+
+
+
+
+
