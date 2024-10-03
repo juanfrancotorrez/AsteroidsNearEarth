@@ -24,9 +24,13 @@ Pasos para ejecutar el proceso:
 2. Agregar las credenciales enviadas en el archivo .env ubicado en la carpeta \PythonCode
 3. Abrir terminal
 4. Ubicarse en AsteroidsNearEarth\Airflow\
-5. Correr: docker compose up 
+5. Correr: 
+    ```bash
+    docker compose up
+
     -Esto va a bajar las images y levantar los containers de postgress, reddit  y servicios de airflow necesarios para la ejecucion de applicativo.
-6. En un web browser dirigirse a la dirección: http://localhost:8080/ , esto abrira la interfaz web de Airflow. Ingresar con las siguientes credenciales enviadas.
+
+6. Una vez instalado en un web browser dirigirse a la dirección: http://localhost:8080/ , esto abrira la interfaz web de Airflow. Ingresar con las siguientes credenciales enviadas.
 
 
 
