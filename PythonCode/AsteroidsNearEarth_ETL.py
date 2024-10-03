@@ -5,19 +5,17 @@ from GenericTools import database_conection
 import json
 from dotenv import load_dotenv
 import os
-from datetime import datetime, timedelta
+from datetime import datetime, timedelta, date
 
 
 def extract_obtain_last_date(engine:any):
+    #Este modulo se conecta a la base de datos y obtiene la última fecha insertada en la fact principal
+
 
     #Me conecto a la base
     try:
         with engine.connect() as connection:
             print("Connection to Redshift successful!")
-            # Example query to test connection
-            #result = connection.execute("SELECT current_date;")
-            #for row in result:
-            #    print("Current date in Redshift:", row[0])
     except Exception as e:
         print(f"Error connecting to Redshift: {e}") 
 
@@ -25,19 +23,20 @@ def extract_obtain_last_date(engine:any):
     max_date_df = pd.read_sql('select isnull(cast(max(date) as date), cast(dateadd(d,-14,getdate()) as date)) from "2024_juan_franco_torrez_schema".fact_asteroidsnearearth', engine)
     
     max_date = max_date_df[max][0]
-
+    
     print(f"Max date obtained from table: {max_date}")
+
+    #Convierto el dato a Datetime
+    max_date=pd.to_datetime(max_date).date()
 
     return max_date
 
 
-def extract_range_of_dates(from_date:any):
+def extract_range_of_dates(from_date:any, to_date:any):
+    #Este modulo recibe fecha desde y fecha hasta y genera una lista dataframe de
+    # lotes de 7 dias entre ambas fechas 
 
-    from_date = pd.to_datetime(from_date,format="%Y-%m-%d")
-        
-    # Definir la to_date como hoy
-    to_date = pd.to_datetime(datetime.now().date(),format="%Y-%m-%d")
-
+       
     ranges = []
 
     while from_date <= to_date:
@@ -206,56 +205,51 @@ def load_tables(engine:any, asteroids_to_insert:any, fact_to_insert:any):
         # si hay error, retorna False y el mensaje de error
         return False, f"Error during insert: {str(e)}"
 
-    
+
 def main_etl_asteriods_near_earth():
 
-    js = extract_api_conection()
-
-    df = transform_main_dataframe(js)
     engine = database_conection()
+    from_date = extract_obtain_last_date(engine)
 
+    # Definir la to_date como hoy
+    to_date = pd.to_datetime(datetime.now()).date()
 
-    dim_df=transform_dimensions(engine,df)
-    fact_df=transform_fact(engine,df)
+    df = extract_range_of_dates(from_date,to_date)
 
-    success,message = load_tables(engine,dim_df,fact_df)
+    print(df)
 
-    # Verificar el resultado
-    if success:
-        print("Inserts were successful.")
-        return
-    else:
-        print(f"Inserts failed: {message}")
-        return
+    for index, row in df.iterrows():
+        from_date_str = str(row['from_date'])
+        to_date_str = str(row['to_date'])
+
+        js = extract_api_conection(from_date_str,to_date_str)
+        df = transform_main_dataframe(js)
+        dim_df=transform_dimensions(engine,df)
+        fact_df=transform_fact(engine,df)
+        success,message = load_tables(engine,dim_df,fact_df)
+
+        # Verificar el resultado
+        if success:
+            print(f"Inserts for {from_date_str} -  {to_date_str} were successful.")
+            return
+        else:
+            print(f"Inserts failed: {message}")
+            return
+        
 
 #main_etl_asteriods_near_earth()
 
-
-
+"""
 engine = database_conection()
-from_date = extract_obtain_last_date(engine)
+from_date=extract_obtain_last_date(engine)
 
-df = extract_range_of_dates(from_date)
+# Definir la to_date como hoy
+to_date = pd.to_datetime(datetime.now()).date()
+
+df=extract_range_of_dates(from_date,to_date)
 
 print(df)
-
-for index, row in df.iterrows():
-    from_date_str = str(row['from_date'])
-    to_date_str = str(row['to_date'])
-
-    js = extract_api_conection(from_date_str,to_date_str)
-    df = transform_main_dataframe(js)
-    dim_df=transform_dimensions(engine,df)
-    fact_df=transform_fact(engine,df)
-    success,message = load_tables(engine,dim_df,fact_df)
-
-     # Verificar el resultado
-    if success:
-        print(f"Inserts for {from_date_str} -  {to_date_str} were successful.")
-    else:
-        print(f"Inserts failed: {message}")
-
-
+#"""
 
 
 
