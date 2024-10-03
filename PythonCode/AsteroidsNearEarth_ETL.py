@@ -231,13 +231,13 @@ def main_etl_asteriods_near_earth():
         # Verificar el resultado
         if success:
             print(f"Inserts for {from_date_str} -  {to_date_str} were successful.")
-            return
+            
         else:
             print(f"Inserts failed: {message}")
-            return
+    return
         
 
-#main_etl_asteriods_near_earth()
+main_etl_asteriods_near_earth()
 
 """
 engine = database_conection()
