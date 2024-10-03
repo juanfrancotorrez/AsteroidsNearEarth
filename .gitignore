@@ -4,6 +4,10 @@ airflow/logs/
 airflow/plugins/
 airflow/dags/
 airflow/PythonCode/
+.venv/Include/
+.venv/Lib/
+.venv/Scripts/
+.venv
 *.pyc
 __pycache__/
 *.log

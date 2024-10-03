@@ -26,6 +26,8 @@ def extract_obtain_last_date(engine:any):
     
     max_date = max_date_df[max][0]
 
+    print(f"Max date obtained from table: {max_date}")
+
     return max_date
 
 
