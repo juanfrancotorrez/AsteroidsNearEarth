@@ -15,7 +15,7 @@ with DAG(
     description= 'ETL pipeline to extract, transform and load data on the asteroids datawarehouse created by Juan Franco Torrez',
     schedule_interval= '@daily',
     start_date= datetime(2024,9,27),
-    catchup=True,
+    catchup=False,
 )as dag:
 
     # Task 1 main execution
