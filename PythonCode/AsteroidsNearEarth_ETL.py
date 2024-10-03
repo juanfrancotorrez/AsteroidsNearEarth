@@ -9,8 +9,8 @@ from datetime import datetime, timedelta, date
 
 
 def extract_obtain_last_date(engine:any):
-    #Este modulo se conecta a la base de datos y obtiene la última fecha insertada en la fact principal
-
+    #Este modulo se conecta a la base de datos y obtiene la última fecha insertada en 
+    # la fact principal
 
     #Me conecto a la base
     try:
@@ -26,7 +26,7 @@ def extract_obtain_last_date(engine:any):
     
     print(f"Max date obtained from table: {max_date}")
 
-    #Convierto el dato a Datetime
+    #Convierto el dato a Date
     max_date=pd.to_datetime(max_date).date()
 
     return max_date
@@ -35,7 +35,6 @@ def extract_obtain_last_date(engine:any):
 def extract_range_of_dates(from_date:any, to_date:any):
     #Este modulo recibe fecha desde y fecha hasta y genera una lista dataframe de
     # lotes de 7 dias entre ambas fechas 
-
        
     ranges = []
 
@@ -51,7 +50,7 @@ def extract_range_of_dates(from_date:any, to_date:any):
         ranges.append({'from_date': from_date, 'to_date': end_date})
         
         # Avanzar a la siguiente fecha_desde (7 días después)
-        from_date += timedelta(days=7)
+        from_date += timedelta(days=8)
 
     # Crear un DataFrame a partir de la lista de rangos
     df_rangos = pd.DataFrame(ranges)
@@ -59,10 +58,12 @@ def extract_range_of_dates(from_date:any, to_date:any):
     return df_rangos
 
 def extract_api_conection(from_date:any, to_date:any):
+    #Este modulo toma los parametros y genera el json que obtiene de la API
 
+    #Cargo variables de entorno.
     load_dotenv()
     
-    # API data
+    # API
     url = os.getenv("API_NASA_URL")
     apikey = 'api_key=' + os.getenv("API_NASA_KEY")
     
@@ -76,6 +77,8 @@ def extract_api_conection(from_date:any, to_date:any):
 
 
 def transform_main_dataframe(data:any):
+    #este modulo convierte el json a un dataframe renombrando columnas para que quede listo
+    #para las tablas
 
     asteroid_near_earth = []
 
@@ -235,21 +238,6 @@ def main_etl_asteriods_near_earth():
         else:
             print(f"Inserts failed: {message}")
     return
-        
-
-main_etl_asteriods_near_earth()
-
-"""
-engine = database_conection()
-from_date=extract_obtain_last_date(engine)
-
-# Definir la to_date como hoy
-to_date = pd.to_datetime(datetime.now()).date()
-
-df=extract_range_of_dates(from_date,to_date)
-
-print(df)
-#"""
 
 
 
