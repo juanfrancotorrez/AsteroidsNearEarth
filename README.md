@@ -32,7 +32,7 @@ Esto va a bajar las images y levantar los containers de postgress, reddit  y ser
 6. Una vez instalado en un web browser dirigirse a la dirección: http://localhost:8080/ , esto abrira la interfaz web de Airflow. Ingresar con las credenciales de Airflow enviadas.
 
 
-## Estructura del proyecto
+## Estructura del Proyecto
     ```bash
     ASTEROIDSNEAREARTH/
     │
@@ -56,7 +56,8 @@ Esto va a bajar las images y levantar los containers de postgress, reddit  y ser
     │
     └── requirements.txt               # Archivo con las dependencias del proyecto
 
-## Variables de entorno
+
+## Variables de Entorno
 
 El proyecto utiliza algunas variables de entorno que deben configurarse en un archivo .env en la raíz del proyecto.
 
@@ -69,10 +70,11 @@ El proyecto utiliza algunas variables de entorno que deben configurarse en un ar
     DB_PORT=        #Puerto de redshift
     DB_NAME=        #Nombre de la base da datos.
 
+## Test
 
+El proyecto incluye un conjunto de tests definidos en la carpeta PythonCode/tests. Para ejecutarlos, usa pytest:
+```bash
+pytest
 
-
-
-
-
-
+## Automatización con GitHub Actions
+El proyecto está configurado para ejecutar los tests automáticamente en cada push y pull request utilizando GitHub Actions. La configuración se encuentra en .github/workflows/python-app.yml.
