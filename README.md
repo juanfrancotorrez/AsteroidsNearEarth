@@ -13,8 +13,6 @@ El proceso está pensando para que se ejecute de forma diaria, y que en cada eje
 - [Variables de Entorno](#variables-de-entorno)
 - [Tests](#tests)
 - [Automatización con GitHub Actions](#automatización-con-github-actions)
-- [Contribuciones](#contribuciones)
-- [Licencia](#licencia)
 
 ## Modelo de datos
 
@@ -110,7 +108,7 @@ El proyecto utiliza algunas variables de entorno que deben configurarse en un ar
     DB_PORT=        #Puerto de redshift
     DB_NAME=        #Nombre de la base da datos.
 
-## Test
+## Tests
 
 El proyecto incluye un conjunto de tests definidos en la carpeta PythonCode/tests. Para ejecutarlos, usa pytest:
     ```
