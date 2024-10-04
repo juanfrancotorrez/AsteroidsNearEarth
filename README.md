@@ -3,8 +3,20 @@
 ## Descripción
 Este proyecto es un pipeline ETL (Extract, Transform, Load) diseñado para extraer información sobre asteroides cercanos a la Tierra utilizando la API de la NASA, transformar los datos y cargar los resultados en una base de datos Redshift.
 
-## Modelo de datos
+El proceso está pensando para que se ejecute de forma diaria, y que en cada ejecución obtenga la ultima fecha almacenada y cargue todas las fechas faltantes entre esa fecha y el día actual. En el caso de que las tablas estén vacías, el proceso carga automáticamente los últimos 14 días.
 
+
+## Tabla de Contenidos
+- [Modelo de datos](#modelo-de-datos)
+- [Instalación](#instalación)
+- [Estructura del Proyecto](#estructura-del-proyecto)
+- [Variables de Entorno](#variables-de-entorno)
+- [Tests](#tests)
+- [Automatización con GitHub Actions](#automatización-con-github-actions)
+- [Contribuciones](#contribuciones)
+- [Licencia](#licencia)
+
+## Modelo de datos
 
 El proyecto utiliza dos tablas principales para almacenar la información relacionada con los asteroides y sus acercamientos.
 
@@ -29,18 +41,6 @@ El proyecto utiliza dos tablas principales para almacenar la información relaci
 | `miss_lunar_distance`                | `float8`        | Distancia a la que pasó el asteroide medida en distancias lunares. |
 | `miss_km_distance`                   | `float8`        | Distancia a la que pasó el asteroide en kilómetros.  |
 | `miss_astronomical_distance`         | `float8`        | Distancia a la que pasó el asteroide en unidades astronómicas. |
-
-
-
-
-## Tabla de Contenidos
-- [Instalación](#instalación)
-- [Estructura del Proyecto](#estructura-del-proyecto)
-- [Variables de Entorno](#variables-de-entorno)
-- [Tests](#tests)
-- [Automatización con GitHub Actions](#automatización-con-github-actions)
-- [Contribuciones](#contribuciones)
-- [Licencia](#licencia)
 
 ## Instalación
 
