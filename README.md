@@ -20,7 +20,7 @@ Pasos para ejecutar el proceso:
    ```bash
    git clone https://github.com/juanfrancotorrez/AsteroidsNearEarth.git
    cd AsteroidsNearEarth
-2. Agregar las credenciales enviadas en el archivo .env ubicado en la carpeta \PythonCode
+2. Agregar las credenciales enviadas por slack en el archivo .env ubicado en la carpeta \PythonCode
 3. Abrir terminal
 4. Ubicarse en AsteroidsNearEarth\Airflow\
 5. Correr: 
@@ -74,7 +74,9 @@ El proyecto utiliza algunas variables de entorno que deben configurarse en un ar
 
 El proyecto incluye un conjunto de tests definidos en la carpeta PythonCode/tests. Para ejecutarlos, usa pytest:
     ```bash
+    
     pytest
+
 
 ## Automatización con GitHub Actions
 El proyecto está configurado para ejecutar los tests automáticamente en cada push y pull request utilizando GitHub Actions. La configuración se encuentra en .github/workflows/python-app.yml.
