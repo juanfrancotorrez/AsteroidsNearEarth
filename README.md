@@ -61,6 +61,16 @@ Esto va a bajar las images y levantar los containers de postgress, reddit  y ser
 
 6. Una vez instalado en un web browser dirigirse a la dirección: http://localhost:8080/ , esto abrira la interfaz web de Airflow. Ingresar con las credenciales de Airflow enviadas.
 
+7. Luego de haber ingresado Airflow, en el apartado de DAG hacer click en el DAG creado para la ejecucion de este proyecto:
+    ```bash
+    etl_asteroids_near_earth_ETL
+
+8. Ya dentro del DAG, ejecutarlo utilizando la opción "Trigger DAG". El dag se ejecutara correctamente y cargará las tablas del modelo. Para revisarlo se debería comprobar que al menos la fecha del día actual este cargada en la tabla fact_asteroidsnearearth con el siguiente query:
+    ```sql
+    select date, count(1) from "2024_juan_franco_torrez_schema".fact_asteroidsnearearth
+    group by date
+    order by date desc
+
 
 ## Estructura del Proyecto
     ```bash
@@ -110,3 +120,8 @@ El proyecto incluye un conjunto de tests definidos en la carpeta PythonCode/test
 
 ## Automatización con GitHub Actions
 El proyecto está configurado para ejecutar los tests automáticamente en cada push y pull request utilizando GitHub Actions. La configuración se encuentra en .github/workflows/python-app.yml.
+
+Acá tienen dos Pull Request ejemplo de la automatizacion de los Test unitarios, cada uno con los test aprobados correctamente:
+
+https://github.com/juanfrancotorrez/AsteroidsNearEarth/pull/6
+https://github.com/juanfrancotorrez/AsteroidsNearEarth/pull/7
