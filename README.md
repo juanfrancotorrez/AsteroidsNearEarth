@@ -73,8 +73,8 @@ El proyecto utiliza algunas variables de entorno que deben configurarse en un ar
 ## Test
 
 El proyecto incluye un conjunto de tests definidos en la carpeta PythonCode/tests. Para ejecutarlos, usa pytest:
-```bash
-pytest
+    ```bash
+    pytest
 
 ## Automatización con GitHub Actions
 El proyecto está configurado para ejecutar los tests automáticamente en cada push y pull request utilizando GitHub Actions. La configuración se encuentra en .github/workflows/python-app.yml.
