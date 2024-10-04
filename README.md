@@ -3,6 +3,36 @@
 ## Descripción
 Este proyecto es un pipeline ETL (Extract, Transform, Load) diseñado para extraer información sobre asteroides cercanos a la Tierra utilizando la API de la NASA, transformar los datos y cargar los resultados en una base de datos Redshift.
 
+## Modelo de datos
+
+
+El proyecto utiliza dos tablas principales para almacenar la información relacionada con los asteroides y sus acercamientos.
+
+### Tabla 1: `dim_asteroids`
+
+| Columna                   | Tipo de Datos   | Descripción                                         |
+|---------------------------|-----------------|-----------------------------------------------------|
+| `asteroid_id`              | `int4`          | Identificador único del asteroide.                  |
+| `asteroid_name`            | `varchar(256)`  | Nombre del asteroide.                               |
+| `absolute_magnitude_h`     | `float8`        | Magnitud absoluta del asteroide.                    |
+| `min_estimate_diameter_km` | `float8`        | Diámetro estimado mínimo en kilómetros.             |
+| `max_estimate_diameter_km` | `float8`        | Diámetro estimado máximo en kilómetros.             |
+
+### Tabla 2: `fact_asteroidsnearearth`
+
+| Columna                              | Tipo de Datos   | Descripción                                         |
+|--------------------------------------|-----------------|-----------------------------------------------------|
+| `date`                               | `timestamp`     | Fecha y hora del acercamiento del asteroide.        |
+| `asteroid_id`                        | `int4`          | Identificador único del asteroide (FK con `dim_asteroids`). |
+| `is_potentially_hazardous_asteroid`  | `bool`          | Indica si el asteroide es potencialmente peligroso. |
+| `velocity_km_sec`                    | `float8`        | Velocidad del asteroide en kilómetros por segundo.   |
+| `miss_lunar_distance`                | `float8`        | Distancia a la que pasó el asteroide medida en distancias lunares. |
+| `miss_km_distance`                   | `float8`        | Distancia a la que pasó el asteroide en kilómetros.  |
+| `miss_astronomical_distance`         | `float8`        | Distancia a la que pasó el asteroide en unidades astronómicas. |
+
+
+
+
 ## Tabla de Contenidos
 - [Instalación](#instalación)
 - [Estructura del Proyecto](#estructura-del-proyecto)
