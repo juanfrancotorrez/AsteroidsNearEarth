@@ -101,7 +101,7 @@ Esto va a bajar las images y levantar los containers de postgress, reddit  y ser
 
 El proyecto utiliza algunas variables de entorno que deben configurarse en un archivo .env en la raíz del proyecto.
 
-    ```markdown
+    ```
     API_NASA_URL=   #Direccion de la API
     API_NASA_KEY=   #Key necesaria para hacer el request a la API
     DB_USER=        #Usuario de base de datos
@@ -113,7 +113,7 @@ El proyecto utiliza algunas variables de entorno que deben configurarse en un ar
 ## Test
 
 El proyecto incluye un conjunto de tests definidos en la carpeta PythonCode/tests. Para ejecutarlos, usa pytest:
-    ```bash
+    ```
     
     pytest
 
