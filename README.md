@@ -16,7 +16,7 @@ El proceso está pensando para que se ejecute de forma diaria, y que en cada eje
 
 ## Modelo de datos
 
-El proyecto utiliza dos tablas principales para almacenar la información relacionada con los asteroides y sus acercamientos.
+El proyecto utiliza dos tablas principales para almacenar la inforamación relacionada con los asteroides y sus acercamientos.
 
 ### Tabla 1: `dim_asteroids`
 
